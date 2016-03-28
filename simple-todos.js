@@ -141,8 +141,19 @@ Meteor.methods({
     }
  
     Tasks.update(taskId, { $set: { private: setToPrivate } });
-  }/*,
-  editTask: function()*/
+  },
+  editTask: function(taskId, fieldName, value){
+	  
+	  filedName = "text"; //remove, for testing
+	  
+	  var task = Tasks.findOne(taskId);
+	  
+	  if(task.owner !== Meteor.userId()){
+		  throw new Meteor.Error("not-authorized");
+	  }
+	  
+	  Tasks.update(taskId, {$set: {fieldName: value}});
+  }
 });
 
 
