@@ -141,8 +141,8 @@ Meteor.methods({
     }
  
     Tasks.update(taskId, { $set: { private: setToPrivate } });
-  },
-  editTask: function()
+  }/*,
+  editTask: function()*/
 });
 
 
