@@ -67,10 +67,10 @@ if (Meteor.isClient) {
 	  }
 	  $(".change-task").focus();
 	},
+	
+	
 	"keydown .change-task, blur .change-task": function (event) {
       // Prevent default browser form submit
-	  
-		
       console.log(this);
 	  if(event.keyCode == 13 || event.type == "focusout"){
 		  event.preventDefault(); //probably not necessary
@@ -85,6 +85,9 @@ if (Meteor.isClient) {
 		  if($(".change-task").length){
 		  $(event.target).parent().val(text); 
 		  $(event.target).parent().empty();
+		  while($(".change-task").length){
+			  console.log('yo\n');
+		  }
 		  }
 		  //Meteor.user();
 		  
