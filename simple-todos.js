@@ -160,8 +160,9 @@ Meteor.methods({
 	  if(task.owner !== Meteor.userId()){
 		  throw new Meteor.Error("not-authorized");
 	  }
-	  
-	  Tasks.update(taskId, {$set: {fieldName: value}});
+	  var field = {};
+	  field[fieldName] = value;
+	  Tasks.update(taskId, {$set: field});
   }
 });
 
