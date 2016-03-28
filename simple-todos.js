@@ -85,7 +85,7 @@ if (Meteor.isClient) {
 		  console.log($(".change-task"));
 		  console.log('yo');
 		 // $(event.target).parent().val(text); 
-		  $(event.target).parent().innerHTML = '';
+		  $(event.target).parent().html("");
 		  
 		  
 		  //Meteor.user();
