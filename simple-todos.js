@@ -69,7 +69,7 @@ if (Meteor.isClient) {
 	},
 	"keydown .change-task, blur .change-task": function (event) {
       // Prevent default browser form submit
-	  if($(".change-task")){
+	  if($(".change-task").length){
       console.log(this);
 	  if(event.keyCode == 13 || event.type == "focusout"){
 		  event.preventDefault(); //probably not necessary
