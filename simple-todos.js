@@ -162,7 +162,7 @@ Meteor.methods({
 	  }
 	  var field = {};
 	  field[fieldName] = value;
-	  alert(value);
+
 	  Tasks.update(taskId, {$set : field});
   }
 });
