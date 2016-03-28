@@ -162,8 +162,10 @@ Meteor.methods({
 	  }
 	  var field = {};
 	  field[fieldName] = value;
+	  var $set = {};
+	  $set["text"] = value;
 
-	  Tasks.update(taskId, {$set : field});
+	  Tasks.update(taskId, {$set : $set});
   }
 });
 
