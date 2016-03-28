@@ -82,9 +82,10 @@ if (Meteor.isClient) {
 		  Meteor.call("editTask", this._id, $(event.target).attr('id'), text);
 	 
 		  // Clear form
+		  if($(".change-task").length){
 		  console.log($(".change-task"));
 		  console.log('yo');
-		  if($(".change-task").length){
+		  {
 		  var parent = $(event.target).parent();
 		 
 		  $(event.target).parent().html("");
@@ -92,6 +93,7 @@ if (Meteor.isClient) {
 		  parent.text(text);
 		  }
 		  //Meteor.user();
+		  }
 		  
 	  }
 	  }
