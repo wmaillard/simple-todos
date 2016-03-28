@@ -83,7 +83,7 @@ if (Meteor.isClient) {
 	 
 		  // Clear form
 		  console.log($(".change-task"));
-		  if($(event.target).parent($(event.target)).length){
+		  if($(event.target).parent().length){
 			  console.log('yo');
 		  $(event.target).parent().val(text); 
 		  $(event.target).parent().empty();
