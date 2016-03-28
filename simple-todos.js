@@ -69,7 +69,7 @@ if (Meteor.isClient) {
 	},
 	"keydown .change-task, blur .change-task": function (event) {
       // Prevent default browser form submit
-	  if($(".change-task"){
+	  if($(".change-task")){
       console.log(this);
 	  if(event.keyCode == 13 || event.type == "focusout"){
 		  event.preventDefault(); //probably not necessary
@@ -81,7 +81,7 @@ if (Meteor.isClient) {
 		  Meteor.call("editTask", this._id, $(event.target).id, text);
 	 
 		  // Clear form
-		  $(event.target)parent().val() = text;
+		  $(event.target).parent().val() = text;
 		  $(event.target).parent().empty();
 		  
 		  //Meteor.user();
