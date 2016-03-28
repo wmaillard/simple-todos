@@ -74,7 +74,7 @@ if (Meteor.isClient) {
       // Prevent default browser form submit
       console.log(event);
 	  if(event.keyCode == 13 || event.type == "focusout"){
-		  event.preventDefault(); //probably not necessary
+		  //event.preventDefault(); //probably not necessary
 	 
 		  // Get value from form element
 		  var text = $(event.target).val();
@@ -82,17 +82,10 @@ if (Meteor.isClient) {
 		  // Insert a task into the collection
 		  Meteor.call("editTask", this._id, $(event.target).attr('id'), text);
 	 
-		  // Clear form
-		  
-		  console.log($(".change-task"));
-		  console.log('yo');
+		  // Get rid of form
 		  var parent = $(event.target).parent();
-		 
 		  $(event.target).parent().html("");
 		  
-		 // parent.text(text);
-		  
-		  //Meteor.user();
 		  }
 		  
 	  }
