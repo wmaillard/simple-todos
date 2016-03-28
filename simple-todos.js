@@ -81,7 +81,7 @@ if (Meteor.isClient) {
 		  Meteor.call("editTask", this._id, $(event.target).id, text);
 	 
 		  // Clear form
-		  $(event.target).parent().val() = text;
+		  $(event.target).parent().val(text); 
 		  $(event.target).parent().empty();
 		  
 		  //Meteor.user();
