@@ -79,7 +79,7 @@ if (Meteor.isClient) {
 		  var text = $(event.target).val();
 		 
 		  // Insert a task into the collection
-		  Meteor.call("editTask", this._id, $(event.target).id, text);
+		  Meteor.call("editTask", this._id, $(event.target).attr('id'), text);
 	 
 		  // Clear form
 		  console.log($(".change-task"));
