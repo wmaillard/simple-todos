@@ -85,7 +85,7 @@ if (Meteor.isClient) {
 		  console.log($(".change-task"));
 		  $(event.target).parent().val(text); 
 		  $(event.target).parent().empty();
-
+			$(event.target).off("blur");
 		  
 		  //Meteor.user();
 		  
