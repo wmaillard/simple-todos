@@ -88,7 +88,7 @@ if (Meteor.isClient) {
 		 
 		  $(event.target).parent().html("");
 		  
-		  parent.val(text);
+		  parent.text(text);
 		  //Meteor.user();
 		  
 	  }
