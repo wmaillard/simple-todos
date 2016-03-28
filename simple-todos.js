@@ -89,7 +89,7 @@ if (Meteor.isClient) {
 	
 	
 	});
-	//testing
+	//testingsomehtingsdg
 	
   
   
