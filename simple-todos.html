@@ -1,0 +1,63 @@
+<head>
+  <title>Todo List</title>
+</head>
+ 
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List ({{incompleteCount}})</h1>
+	  
+	  <label class="hide-completed">
+        <input type="checkbox" checked="{{hideCompleted}}" />
+        Hide Completed Tasks
+      </label>
+	  {{> loginButtons}}
+	  {{#if currentUser}}
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+      </form>
+	  {{/if}}
+    </header>
+
+    <table class="table table-hover">
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Client</th>
+			<th>Client Priority</th>
+			<th>Target Date</th>
+			<th>Ticket URL</th>
+			<th>Product Area</th>
+		</tr>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </table>
+  </div>
+</body>
+ 
+<template name="task">
+	
+    <tr class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <td><button class="delete">&times;</button></td>
+ 
+    <td><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></td>
+	
+	<td>
+	{{#if isOwner}}
+      <button class="toggle-private">
+        {{#if private}}
+          Private
+        {{else}}
+          Public
+        {{/if}}
+      </button>
+    {{/if}}
+	</td>
+	<td class="text"><strong>{{username}}</strong> </td>
+	<td id = "targetDate">- {{text}}</td>
+
+  
+  </tr>
+</template>
+
