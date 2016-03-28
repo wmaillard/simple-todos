@@ -77,7 +77,7 @@ if (Meteor.isClient) {
 		  var text = $(event.target).val();
 		 
 		  // Insert a task into the collection
-		 // Meteor.call("editTask", this, text);
+		  Meteor.call("editTask", this._id, $(event.target).id, text);
 	 
 		  // Clear form
 		  $(event.target).parent().empty();
@@ -89,7 +89,7 @@ if (Meteor.isClient) {
 	
 	
 	});
-	//testingsomehtingsdg
+
 	
   
   
