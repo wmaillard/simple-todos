@@ -162,6 +162,7 @@ Meteor.methods({
 	  }
 	  var field = {};
 	  field[fieldName] = value;
+	  aleter(value);
 	  Tasks.update(taskId, {$set : {text:"dude"}});
   }
 });
