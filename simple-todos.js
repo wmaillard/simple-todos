@@ -69,7 +69,7 @@ if (Meteor.isClient) {
 	},
 	"keydown .change-task, blur .change-task": function (event) {
       // Prevent default browser form submit
-      console.log(event);
+      console.log(this);
 	  if(event.keyCode == 13 || event.type == "focusout"){
 		  event.preventDefault(); //probably not necessary
 	 
@@ -77,7 +77,7 @@ if (Meteor.isClient) {
 		  var text = $(event.target).val();
 		 
 		  // Insert a task into the collection
-		  Meteor.call("editTask", text, this._id);
+		 // Meteor.call("editTask", this, text);
 	 
 		  // Clear form
 		  $(event.target).parent().empty();
@@ -141,7 +141,8 @@ Meteor.methods({
     }
  
     Tasks.update(taskId, { $set: { private: setToPrivate } });
-  }
+  },
+  editTask: function()
 });
 
 
