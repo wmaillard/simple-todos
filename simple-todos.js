@@ -80,7 +80,7 @@ if (Meteor.isClient) {
 		  Meteor.call("editTask", this._id, $(event.target).id, text);
 	 
 		  // Clear form
-		  if($event.target !==undefined){
+		  if($(event.target)){
 		  $(event.target).parent().empty();
 		  }
 		  //Meteor.user();
