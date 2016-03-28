@@ -40,11 +40,13 @@ if (Meteor.isClient) {
       Session.set("hideCompleted", event.target.checked);
 	}
   });
+  
     Template.task.helpers({
     isOwner: function () {
       return this.owner === Meteor.userId();
     }
   });
+  
     Template.task.events({
     "click .toggle-checked": function () {
       // Set the checked property to the opposite of its current value
@@ -67,8 +69,6 @@ if (Meteor.isClient) {
 	  }
 	  $(".change-task").focus();
 	},
-	
-	
 	"keydown .change-task, blur .change-task": function (event) {
       // Prevent default browser form submit
       console.log(this);
@@ -95,7 +95,7 @@ if (Meteor.isClient) {
 		  }
 		  
 	  }
-	  }
+	  
     
 
 	
