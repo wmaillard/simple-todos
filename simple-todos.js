@@ -153,7 +153,7 @@ Meteor.methods({
   },
   editTask: function(taskId, fieldName, value){
 	  
-	  filedName = "text"; //remove, for testing
+	  fieldName = "text"; //remove, for testing
 	  
 	  var task = Tasks.findOne(taskId);
 	  
