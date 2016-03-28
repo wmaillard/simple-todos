@@ -83,9 +83,10 @@ if (Meteor.isClient) {
 	 
 		  // Clear form
 		  console.log($(".change-task"));
+		  if($(event.target).parent($(event.target)).length){
 		  $(event.target).parent().val(text); 
 		  $(event.target).parent().empty();
-			$(event.target).off("blur");
+		  }
 		  
 		  //Meteor.user();
 		  
