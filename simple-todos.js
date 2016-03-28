@@ -83,7 +83,7 @@ if (Meteor.isClient) {
 		  Meteor.call("editTask", this._id, $(event.target).attr('id'), text);
 	 
 		  // Clear form
-		  if($(".change-task").length){
+		  if(event.type == "focusout"){
 			  console.log($(".change-task"));
 			  console.log('yo');
 			  var parent = $(event.target).parent();
