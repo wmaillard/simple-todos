@@ -83,14 +83,13 @@ if (Meteor.isClient) {
 	 
 		  // Clear form
 		  if($(".change-task").length){
-		  console.log($(".change-task"));
-		  console.log('yo');
-		  {
-		  var parent = $(event.target).parent();
-		 
-		  $(event.target).parent().html("");
-		  
-		  parent.text(text);
+			  console.log($(".change-task"));
+			  console.log('yo');
+			  var parent = $(event.target).parent();
+			 
+			  $(event.target).parent().html("");
+			  
+			  parent.text(text);
 		  }
 		  //Meteor.user();
 		  }
