@@ -82,13 +82,11 @@ if (Meteor.isClient) {
 		  Meteor.call("editTask", this._id, $(event.target).id, text);
 	 
 		  // Clear form
-		  if($(".change-task").length){
+		  console.log(event);
 		  $(event.target).parent().val(text); 
 		  $(event.target).parent().empty();
-		  while($(".change-task").length){
-			  console.log('yo\n');
-		  }
-		  }
+
+		  
 		  //Meteor.user();
 		  
 	  }
