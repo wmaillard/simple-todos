@@ -41,9 +41,9 @@
 <template name="task">
 	
     <tr class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
-    <td><button class="delete">&times;</button></td>
+    <td align="center"><button class="delete">&times;</button></td>
  
-    <td><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></td>
+    <td align="center"><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></td>
 	
 	<td>
 	{{#if isOwner}}
