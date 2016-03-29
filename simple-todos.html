@@ -20,20 +20,24 @@
     </header>
 
     <table class="table table-hover">
-		<tr>
-			<th>Delete</th>
-			<th>Mark Complete</th>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Client</th>
-			<th>Client Priority</th>
-			<th>Target Date</th>
-			<th>Ticket URL</th>
-			<th>Product Area</th>
-		</tr>
+    <thead>
+  		<tr>
+  			<th>Delete</th>
+  			<th>Mark Complete</th>
+  			<th>Title</th>
+  			<th>Description</th>
+  			<th>Client</th>
+  			<th>Client Priority</th>
+  			<th>Target Date</th>
+  			<th>Ticket URL</th>
+  			<th>Product Area</th>
+  		</tr>
+  	</thead>
+  	<tbody>
       {{#each tasks}}
         {{> task}}
       {{/each}}
+    </tbody>
     </table>
   </div>
 </body>
@@ -41,13 +45,13 @@
 <template name="task">
 	
     <tr class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
-    <td align="center"><button class="delete btn-danger">x</button></td>
+    <td align="center"><button class="delete btn btn-danger">x</button></td>
  
     <td align="center"><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></td>
 	
 	<td>
 	{{#if isOwner}}
-      <button class="toggle-private btn-warning">
+      <button class="toggle-private btn btn-warning">
         {{#if private}}
           Private
         {{else}}
